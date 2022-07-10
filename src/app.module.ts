@@ -1,15 +1,15 @@
-import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { HttpModule } from '@nestjs/axios';
+import { Global, Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { SharedModule } from './share/share.module';
 import { TaskSync } from './syncs/task.sync';
 
+@Global()
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: [ `.env`]
-    })
+    HttpModule,
+    SharedModule
   ],
   controllers: [AppController],
   providers: [AppService, TaskSync],
