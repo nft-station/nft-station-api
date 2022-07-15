@@ -14,18 +14,35 @@ export class AppConfig {
         return {
             APP: {
                 API_REFIX: process.env.API_REFIX,
-                PORT: Number(process.env.PORT) || 3000
+                PORT: Number(process.env.PORT) || 3000,
+                AUTO_SYNC: (process.env.AUTO_SYNC == 'true') ? true : false,
             },
             NODE: {
                 API: process.env.NODE_API,
             },
-            DATABASE: {
+            DATASOURCE: {
                 HOST: process.env.DB_HOST,
                 PORT: process.env.DB_PORT,
                 DB: process.env.DB_NAME,
                 USERNAME: process.env.DB_USER,
                 PASSWORD: process.env.DB_PASSWORD,
             }
+        }
+    }
+
+    public typeOrmConfig(): any {
+        return {
+            type: process.env.DB_TYPE,
+            host: process.env.DB_HOST,
+            port: Number(process.env.DB_PORT) || 3306,
+            database: process.env.DB_NAME,
+            username: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            entities: ['dist/**/*.entity.{ts,js}'],
+            migrations: ['dist/migrations/*.{ts,js}'],
+            migrationsRun: true,
+            synchronize: false,
+            logging: true,
         }
     }
 }

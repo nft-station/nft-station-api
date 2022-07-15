@@ -1,13 +1,11 @@
-import { BaseEntity, Column, PrimaryColumn } from "typeorm";
-
-export class TokenEntity extends BaseEntity {
-
-   @PrimaryColumn("token_id")
-    tokenId: string;
+import { BaseEntity, Column, Entity, PrimaryColumn } from "typeorm";
+import { PKStringEnity } from "./base/base.entity";
+@Entity('token')
+export class TokenEntity extends PKStringEnity {
 
     @Column({ name: 'owner', length: 255 })
     owner: string;
 
-    @Column({ name: 'contract_id'})
+    @Column({ name: 'contract_id' })
     contractId: number;
 }

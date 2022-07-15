@@ -1,10 +1,10 @@
-import { CreateDateColumn, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 /**
  * BaseEntity
  */
 export class BaseEntity {
-    @CreateDateColumn({
+    @Column({
         type: 'varchar',
         name: 'created_by',
     })
@@ -16,7 +16,7 @@ export class BaseEntity {
     })
     createdAt: Date;
 
-    @UpdateDateColumn({
+    @Column({
         type: 'varchar',
         name: 'updated_by',
     })

@@ -3,9 +3,9 @@ import { APP_CONFIG } from "../share/configurations/app.config";
 import { ServiceUtil } from "../share/utils/service.util";
 
 @Injectable()
-export class DashboardSerivice {
+export class DashboardService {
     private nodeApis = APP_CONFIG.NODE.API;
-    public _logger = new Logger(DashboardSerivice.name);
+    public _logger = new Logger(DashboardService.name);
 
     constructor(private serviceUtil: ServiceUtil) {
 

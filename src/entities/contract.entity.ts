@@ -1,13 +1,14 @@
-import { PKAutoIncrementEnity } from './base.entity';
-import { Column } from 'typeorm';
+import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { BaseEntity } from './base/base.entity';
 
-export class ContractEntity extends PKAutoIncrementEnity {
-  @Column({ name: 'code_id', length: 255 })
-  codeId: string;
+@Entity('contract')
+export class ContractEntity extends BaseEntity {
+  @PrimaryColumn({ name: 'code_id' })
+  codeId: number;
 
-  @Column({ name: 'address', length: 255 })
+  @Column({ name: 'address', type: 'varchar', length: 255 })
   address: string;
 
-  @Column({ name: 'status', length: 50 })
+  @Column({ name: 'status', type: 'varchar', length: 50 })
   status: string;
 }
