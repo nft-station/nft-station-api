@@ -37,16 +37,16 @@ const controllers = [
 ];
 
 const entities = [
-    // CollectiblesEntity,
-    // MetadataEntity,
-    // ContractEntity
+    CollectiblesEntity,
+    MetadataEntity,
+    ContractEntity
 ];
 
 
 @Module({
     imports: [
         HttpModule,
-        // TypeOrmModule.forFeature([...entities])
+        TypeOrmModule.forFeature([...entities])
     ],
     controllers: [...controllers],
     providers: [...services, ...repositories],

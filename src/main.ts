@@ -6,10 +6,6 @@ import registerSwagger from './share/configurations/swagger.config';
 async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
-
-  console.log('App config');
-  console.log(APP_CONFIG);
-
   app.setGlobalPrefix(APP_CONFIG.APP.API_REFIX);
   app.enableCors();
 
