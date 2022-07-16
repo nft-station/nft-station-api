@@ -6,8 +6,9 @@ import { CollectiblesRepository } from "../repositories/collectibles.repository"
 export class CollectiblesService {
     constructor(private collectiblesRepos: CollectiblesRepository) { }
     getByAddress(address: string): Promise<CollectiblesEntity[]> {
-        return this.collectiblesRepos.getByCondition({
-            where: { address }
-        })
+        // return this.collectiblesRepos.getByCondition({
+        //     where: { address }
+        // });
+        return null;
     }
 }

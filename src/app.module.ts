@@ -11,7 +11,7 @@ import { SharedModule } from './share/share.module';
   imports: [
     HttpModule,
     SharedModule,
-    TypeOrmModule.forRoot(new AppConfig().typeOrmConfig())
+    // TypeOrmModule.forRoot(new AppConfig().typeOrmConfig())
   ],
   controllers: [AppController],
   providers: [AppService],

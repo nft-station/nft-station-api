@@ -17,16 +17,16 @@ import { TaskSync } from "../syncs/task.sync";
 import { ServiceUtil } from "./utils/service.util";
 
 const repositories = [
-    CollectiblesRepository,
-    ContractRepository
+    // CollectiblesRepository,
+    // ContractRepository
 ];
 
 const services = [
     DashboardService,
     LaunchpadService,
-    CollectiblesService,
+    // CollectiblesService,
     ContractService,
-    TaskSync, 
+    // TaskSync, 
     ServiceUtil
 ];
 
@@ -37,16 +37,16 @@ const controllers = [
 ];
 
 const entities = [
-    CollectiblesEntity,
-    MetadataEntity,
-    ContractEntity
+    // CollectiblesEntity,
+    // MetadataEntity,
+    // ContractEntity
 ];
 
 
 @Module({
     imports: [
         HttpModule,
-        TypeOrmModule.forFeature([...entities])
+        // TypeOrmModule.forFeature([...entities])
     ],
     controllers: [...controllers],
     providers: [...services, ...repositories],
