@@ -1,3 +1,4 @@
+import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import * as dotenv from 'dotenv';
 
 export class AppConfig {
@@ -42,7 +43,12 @@ export class AppConfig {
             migrations: ['dist/migrations/*.{ts,js}'],
             migrationsRun: true,
             synchronize: false,
-            logging: true,
+            ssl: false,
+            extra: {
+                ssl: {
+                    rejectUnauthorized: false,
+                }
+            }
         }
     }
 }
