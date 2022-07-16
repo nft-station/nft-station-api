@@ -15,6 +15,9 @@ const typeormConfig = new DataSource({
     migrationsRun: true,
     synchronize: true,
     migrationsTableName: 'migrations',
+    ssl: {
+        rejectUnauthorized: false
+    }
     
 })
 export default typeormConfig;
