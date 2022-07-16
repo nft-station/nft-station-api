@@ -14,8 +14,8 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  // @Get('configs')
-  // showConfig(): any {
-  //   return APP_CONFIG;
-  // }
+  @Get('configs')
+  showConfig(): any {
+    return APP_CONFIG;
+  }
 }
