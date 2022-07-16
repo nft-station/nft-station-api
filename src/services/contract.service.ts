@@ -4,13 +4,13 @@ import { ContractRepository } from "../repositories/contract.repository";
 
 @Injectable()
 export class ContractService {
-    // constructor(private contractRepos: ContractRepository) { }
+    constructor(private contractRepos: ContractRepository) { }
 
     public async create(entity: ContractEntity) {
-        // return await this.contractRepos.create(entity);
+        return await this.contractRepos.create(entity);
     }
 
     public async upsert(entities: ContractEntity[]) {
-        // return await this.contractRepos.upsert(entities, ['codeId']);
+        return await this.contractRepos.upsert(entities, ['codeId']);
     }
 }

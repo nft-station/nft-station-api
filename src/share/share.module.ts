@@ -17,16 +17,16 @@ import { TaskSync } from "../syncs/task.sync";
 import { ServiceUtil } from "./utils/service.util";
 
 const repositories = [
-    // CollectiblesRepository,
-    // ContractRepository
+    CollectiblesRepository,
+    ContractRepository
 ];
 
 const services = [
     DashboardService,
     LaunchpadService,
-    // CollectiblesService,
+    CollectiblesService,
     ContractService,
-    // TaskSync, 
+    TaskSync, 
     ServiceUtil
 ];
 
